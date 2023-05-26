@@ -78,23 +78,19 @@
         /* アドバイザー選択 */
         .advisor-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             padding: 20px;
         }
 
         .advisor-item {
-            flex: 0 1 calc(33.333% - 40px);
+            flex: 0 1 calc(33.333% - 20px); /* 左右のマージンを減らし、各アイテムが画面の幅の3分の1を占めるように調整 */
             text-align: center;
-            margin: 0 20px;
+            margin: 0 5px; /* 左右のマージンを小さくする */
             padding: 15px;
             border-radius: 10px;
             background-color: #fff;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             transition: 0.3s;
-        }
-
-        .advisor-item:hover {
-            transform: translateY(-3px);
         }
 
         .advisor-item img {
