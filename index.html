@@ -294,7 +294,7 @@
             <span>ミライ</span>
             <input type="radio" id="advisor1" name="advisor" value="mirai">
             <label for="advisor1">選ぶ</label>
-      　 </div>
+        </div>
         <div class="advisor-item">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/f7759875-0391-47bb-a117-6aa47c156754.jpeg" alt="ユミのプロフィール画像">
             <span>ユミ</span>
@@ -308,7 +308,7 @@
             <label for="advisor3">選ぶ</label>
         </div>
     </div>
-       
+               
         <div class="form-item">
             <button type="submit">送信</button>
         </div>
@@ -335,7 +335,7 @@ document.addEventListener("DOMContentLoaded", function() {
             liff.sendMessages([
                 {
                     type: "text",
-                    text: `下記の内容で脱毛診断\n\n脱毛の経験：${experience}\n目的：${purpose}\n重視すること：${priority}\n脱毛したい部位：${part}\nご予算：${budget}\nお住まいの地域：${region}\nアドバイザー：${advisor-item}\n\nで診断結果を教えてください。`
+                    text: `下記の内容で脱毛診断\n\n脱毛の経験：${experience}\n目的：${purpose}\n重視すること：${priority}\n脱毛したい部位：${part}\nご予算：${budget}\nお住まいの地域：${region}\nアドバイザー：${advisor}\n\nで診断結果を教えてください。`
                 }
             ]).then(() => {
                 console.log("メッセージを送信しました");
