@@ -78,14 +78,14 @@
         /* アドバイザー選択 */
         .advisor-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             padding: 20px;
         }
 
         .advisor-item {
-            flex: 1;
+            flex: 0 1 calc(33.333% - 40px);
             text-align: center;
-            margin: 0 10px;
+            margin: 0 20px;
             padding: 15px;
             border-radius: 10px;
             background-color: #fff;
@@ -98,8 +98,8 @@
         }
 
         .advisor-item img {
-            width: 100px;
-            height: 100px;
+            width: 80%;
+            height: auto;
             border-radius: 50%;
             margin-bottom: 15px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
@@ -120,16 +120,22 @@
             display: inline-block;
             padding: 10px 20px;
             border-radius: 5px;
-            background-color: #ff627f;
+            background-color: #cccccc; /* 初期状態のボタン色をグレーに */
             color: #fff;
             font-weight: bold;
             cursor: pointer;
             transition: 0.3s;
         }
 
+        /* ラジオボタンが選択されたときのボタン色 */
+        .advisor-item input[type="radio"]:checked + label {
+            background-color: #ff627f;
+        }
+
         .advisor-item label:hover {
             background-color: #ff3b6b;
         }
+
 
         /* アニメーション */
         @keyframes slideIn {
