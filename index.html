@@ -87,27 +87,36 @@
                 transform: translateX(0);
             }
           
+
         /* 人選択 */
-             .advisor-item {
-              display: flex;
-              align-items: center;
-              margin-bottom: 10px;
-              padding: 10px;
-              border-radius: 4px;
-              background-color: #fff;
-              box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-          }
+        .advisor-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
 
-          .advisor-item img {
-              width: 70px;
-              height: 70px;
-              border-radius: 50%;
-              margin-right: 10px;
-          }
+        .advisor-item img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
 
-          .advisor-item span {
-              font-size: 16px;
-          }
+        .advisor-item span {
+            font-size: 16px;
+        }
+
+        .advisor-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .advisor {
+            margin-bottom: 10px;
         }
 
         @keyframes fadeIn {
@@ -249,28 +258,28 @@
                 <option value="沖縄県">沖縄県</option>
             </select>
         </div>
-              <div class="form-item">
-            <label for="advisor">あなたの接客員を選んでください</label>
-            <div class="advisor-item">
-                <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/042ec8b3-e105-446e-b68c-063718f5075c.jpeg" alt="ミライの画像">
-                <span>ミライ: 高い専門知識と理解力を持つ脱毛エキスパート。新しい脱毛技術と製品に常に関心を持っており、常に最新の情報を提供することができます。穏やかな話し方と親しみやすさがあり、顧客の悩みや質問に真摯に応えます。</span>
+            <div class="form-item">
+                <label for="advisor">あなたの接客員を選んでください</label>
+                <div class="advisor-item">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/042ec8b3-e105-446e-b68c-063718f5075c.jpeg" alt="ミライのプロフィール画像">
+                    <span>ミライ: 高い専門知識と理解力を持つ脱毛エキスパート。新しい脱毛技術と製品に常に関心を持っており、常に最新の情報を提供することができます。穏やかな話し方と親しみやすさがあり、顧客の悩みや質問に真摯に応えます。</span>
+                    <input type="radio" id="advisor1" name="advisor" value="mirai">
+                    <label for="advisor1">ミライを選ぶ</label>
+                </div>
+                <div class="advisor-item">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/f7759875-0391-47bb-a117-6aa47c156754.jpeg" alt="ユミのプロフィール画像">
+                    <span>ユミ: ユミは自身も脱毛体験者であり、それを通じて多くの知識を得ました。その経験を活かし、顧客に対してリアルでわかりやすいアドバイスをします。ユミの強みはエンパシー力で、顧客の不安を理解し、その心配を軽減するための解決策を提供します。</span>
+                    <input type="radio" id="advisor2" name="advisor" value="yumi">
+                    <label for="advisor2">ユミを選ぶ</label>
+                </div>
+                <div class="advisor-item">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/b10277b3-08fa-45c2-8412-3e083d6102a1.jpeg" alt="トモのプロフィール画像">
+                    <span>トモ: トモは長年にわたり脱毛業界で働いてきました。その経験を活かし、脱毛に関するあらゆる疑問に答え、最適な治療法を提案します。彼のプロフェッショナルさと熱心さは、顧客から高い評価を得ています。</span>
+                    <input type="radio" id="advisor3" name="advisor" value="tomo">
+                    <label for="advisor3">トモを選ぶ</label>
+                </div>
             </div>
-            <div class="advisor-item">
-                <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/f7759875-0391-47bb-a117-6aa47c156754.jpeg" alt="ユミの画像">
-                <span>ユミ: ユミは自身も脱毛体験者であり、それを通じて多くの知識を得ました。その経験を活かし、顧客に対してリアルでわかりやすいアドバイスをします。ユミの強みはエンパシー力で、顧客の不安を理解し、その心配を軽減するための解決策を提供します。</span>
-            </div>
-            <div class="advisor-item">
-                <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/b10277b3-08fa-45c2-8412-3e083d6102a1.jpeg" alt="トモの画像">
-                <span>トモ: トモは長年にわたり脱毛業界で働いてきました。その経験を活かし、脱毛に関するあらゆる疑問に答え、最適な治療法を提案します。彼のプロフェッショナルさと熱心さは、顧客から高い評価を得ています。</span>
-            </div>
-            <input type="radio" id="advisor1" name="advisor" value="mirai">
-            <label for="advisor1">ミライを選ぶ</label><br>
-            <input type="radio" id="advisor2" name="advisor" value="yumi">
-            <label for="advisor2">ユミを選ぶ</label><br>
-            <input type="radio" id="advisor3" name="advisor" value="tomo">
-            <label for="advisor3">トモを選ぶ</label>
-        </div>
-
+        
         <input type="submit" value="診断結果を見る">
     </form>
 
