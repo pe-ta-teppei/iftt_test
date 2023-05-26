@@ -77,24 +77,21 @@
         
         /* アドバイザー選択 */
         .advisor-container {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px;
-        }
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
 
-        .advisor-item {
-            .advisor-item {
-            .advisor-item {
-            display: flex;
-            flex-direction: column; /* 追加：要素を縦に並べる */
-            align-items: center; /* 追加：要素を中央寄せにする */
-            margin: 0 10px; /* 左右のマージンを小さくする */
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-        }
+    .advisor-item {
+        flex: 0 1 calc(33.333% - 20px); /* 左右のマージンを減らし、各アイテムが画面の幅の3分の1を占めるように調整 */
+        text-align: center;
+        margin: 0 10px; /* 左右のマージンを小さくする */
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+    }
 
         .advisor-item img {
             width: 80%;
@@ -288,10 +285,9 @@
                 <option value="沖縄県">沖縄県</option>
             </select>
         </div>
-        
-            <div class="form-item">
-            <label for="advisor">あなたの接客員を選んでください</label>
-            <div class="advisor-container">
+              <label for="advisor">あなたの接客員を選んでください</label>
+
+            <div class="form-item">   
                 <div class="advisor-item">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/042ec8b3-e105-446e-b68c-063718f5075c.jpeg" alt="ミライのプロフィール画像">
             <span>ミライ</span>
