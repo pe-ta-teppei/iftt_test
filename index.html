@@ -329,7 +329,16 @@ document.addEventListener("DOMContentLoaded", function() {
             const part = document.getElementById('part').value;
             const budget = document.getElementById('budget').value;
             const region = document.getElementById('region').value;
-            const advisor = document.getElementById('advisor').value;
+
+            // advisorの値を取得するための修正
+            let advisor;
+            const advisors = document.getElementsByName('advisor');
+            for (let i = 0; i < advisors.length; i++) {
+                if (advisors[i].checked) {
+                    advisor = advisors[i].value;
+                    break;
+                }
+            }
 
             liff.sendMessages([
                 {
@@ -349,3 +358,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
