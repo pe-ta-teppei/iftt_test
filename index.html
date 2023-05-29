@@ -289,7 +289,6 @@
         </div>
            <div class="form-item">
     <label for="advisor">あなたの接客員を選んでください</label>
-          <select id="advisor">
     <div class="advisor-container">
         <div class="advisor-item">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c6945299-a383-4ffd-9126-c9be9249c31f.jpg" alt="Emiのプロフィール画像">
@@ -333,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function() {
             liff.sendMessages([
                 {
                     type: "text",
-                    text: `下記の内容で脱毛診断\n\n脱毛の経験：${experience}\n目的：${purpose}\n重視すること：${priority}\n脱毛したい部位：${part}\nご予算：${budget}\nお住まいの地域：${region}\n脱毛アドバイザー：${advisor}\n\nで診断結果を教えてください。`
+                    text: `下記の内容で脱毛診断\n\n脱毛の経験：${experience}\n目的：${purpose}\n重視すること：${priority}\n脱毛したい部位：${part}\nご予算：${budget}\nお住まいの地域：${region}\n脱毛アドバイザー：${advisor-item}\n\nで診断結果を教えてください。`
                 }
             ]).then(() => {
                 console.log("メッセージを送信しました");
