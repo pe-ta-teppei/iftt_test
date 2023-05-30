@@ -132,7 +132,7 @@
 
         /* 新規追加: 職業、年齢、性格のスタイル */
         .advisor-item span:nth-child(n+3) {
-            font-size: 14px;
+            font-size: 10px;
             font-weight: normal;
         }
 
@@ -140,8 +140,8 @@
             display: none;
         }
 
-        /* ラジオボタンが選択されたときのボタン色 */
-        .advisor-item input[type="radio"]:checked ~ div {
+        /* ラジオボタンが選択されたときのボックス色 */
+        .advisor-item input[type="radio"]:checked ~ * {
             background-color: #ff627f;
         }
 
@@ -304,42 +304,43 @@
                   <div class="form-item">
     <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
     <div class="advisor-container">
-        <input type="radio" id="advisor1" name="advisor" value="Emi" checked style="display: none;">
-        <div class="advisor-item" for="advisor1">
+        <div class="advisor-item">
+            <input type="radio" id="advisor1" name="advisor" value="Emi" checked style="display: none;">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c25f162e-e062-4663-963d-446ddb611158.png" alt="Emiのプロフィール画像">
             <span>Emi</span>
-            <span>職業：インフルエンサー</span>
-            <span>年齢：28</span>
+            <span>インフルエンサー</span>
+            <span>28歳</span>
             <span>性格：喜びと感謝</span>
         </div>
-        <input type="radio" id="advisor2" name="advisor" value="Karen" style="display: none;">
-        <div class="advisor-item" for="advisor2">
+        <div class="advisor-item">
+            <input type="radio" id="advisor2" name="advisor" value="Karen" style="display: none;">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/2b72fb5c-d0dd-4949-916f-be309ab52dc5.png" alt="Karenのプロフィール画像">
             <span>Karen</span>
-            <span>職業：アパレル</span>
-            <span>年齢：23</span>
+            <span>アパレル店員</span>
+            <span>23歳</span>
             <span>性格：美と創造</span>
         </div>
     </div>
     <div class="advisor-container">
-        <input type="radio" id="advisor3" name="advisor" value="Amy" style="display: none;">
-        <div class="advisor-item" for="advisor3">
+        <div class="advisor-item">
+            <input type="radio" id="advisor3" name="advisor" value="Amy" style="display: none;">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/f9bd28e4-9786-4b73-b345-4e49a6f0d6d1.png" alt="Amyのプロフィール画像">
             <span>Amy</span>
-            <span>職業：化粧品販売</span>
-            <span>年齢：24</span>
+            <span>化粧品販売</span>
+            <span>24歳</span>
             <span>性格：平和</span>
         </div>
-        <input type="radio" id="advisor4" name="advisor" value="Sally" style="display: none;">
-        <div class="advisor-item" for="advisor4">
+        <div class="advisor-item">
+            <input type="radio" id="advisor4" name="advisor" value="Sally" style="display: none;">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/99a192be-354e-4415-83a6-765446a2205f.png" alt="Sallyのプロフィール画像">
             <span>Sally</span>
-            <span>職業：キャラクター</span>
-            <span>年齢：非公開</span>
-            <span>性格：知</span>
+            <span>キャラクター</span>
+            <span>年齢非公開</span>
+            <span>性格：知識の探究</span>
         </div>
     </div>
 </div>
+
 
         <div class="form-item">
             <button type="submit">送信</button>
