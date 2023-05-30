@@ -83,9 +83,9 @@
         }
 
         button {
-            padding: 12px 24px;
+            padding: 10px 20px;
             margin: 10px 0;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
             color: #ffffff;
             background-color: #008000; /* 緑色に変更 */
@@ -94,7 +94,7 @@
             cursor: pointer;
             width: 100%; /* ボタンを横いっぱいに広げる */
         }
-        
+       
         /* アドバイザー選択 */
         .advisor-container {
             display: flex;
@@ -124,7 +124,7 @@
 
         .advisor-item span {
             display: block;
-            font-size: 12px;
+            font-size: 16px;
             font-weight: bold;
             margin-bottom: 3px;
         }
@@ -135,12 +135,12 @@
 
         .advisor-item label {
             display: inline-block;
-            padding: 10px 30px;
+            padding: 12px 35px;
             border-radius: 9px;
             background-color: #cccccc; /* 初期状態のボタン色をグレーに */
             color: #fff;
             font-weight: bold;
-            font-size: 9px;
+            font-size: 12px;
             cursor: pointer;
             transition: 0.3s;
         }
@@ -153,8 +153,7 @@
         .advisor-item label:hover {
             background-color: #ff3b6b;
         }
-
-
+        
         /* アニメーション */
         @keyframes slideIn {
             from {
@@ -200,7 +199,6 @@
     </style>
 </head>
 
-    
 <body>
     <header>
         <h1>脱毛サロン診断</h1>
@@ -307,7 +305,7 @@
                 <option value="沖縄県">沖縄県</option>
             </select>
         </div>
-           <div class="form-item">
+                   <div class="form-item">
     <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
     <div class="advisor-container">
         <div class="advisor-item">
@@ -324,7 +322,7 @@
         </div>
     </div>
 </div>
-               
+
         <div class="form-item">
             <button type="submit">送信</button>
         </div>
