@@ -98,6 +98,10 @@
             transition: 0.3s;
             flex: 1; /* 追加 */
         }
+        
+        .advisor-item input[type="radio"]:checked ~ * {
+            background-color: #FFF0F5;
+        }
 
         .advisor-item img {
             width: 90%;
@@ -113,7 +117,7 @@
             font-weight: bold;
             margin-bottom: 3px;
         }
-
+        
         /* 新規追加: 職業、年齢、性格のスタイル */
         .advisor-item span:nth-child(n+3) {
             font-size: 10px;
@@ -178,22 +182,31 @@
         }
     </style>
 </head>
+    
+    document.addEventListener("DOMContentLoaded", function() {
+            // ...
+            // 最初のアドバイザーを選択状態にする
+            const firstAdvisor = document.getElementById('advisor1');
+            firstAdvisor.checked = true;
+            // ...
+        });
 
 <body>
     <header>
         <h1>脱毛サロン診断</h1>
     </header>
     
+    <form id="survey-form">
                   <div class="form-item">
     <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
     <div class="advisor-container">
         <div class="advisor-item">
+            <input type="radio" id="advisor1" name="advisor" value="Emi" style="display: none;">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c25f162e-e062-4663-963d-446ddb611158.png" alt="Emiのプロフィール画像">
             <span>Emi</span>
             <span>インフルエンサー</span>
             <span>28歳</span>
             <span>性格：喜びと感謝</span>
-            <input type="radio" id="advisor1" name="advisor" value="Emi" checked style="display: none;">
         </div>
         <div class="advisor-item">
             <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/2b72fb5c-d0dd-4949-916f-be309ab52dc5.png" alt="Karenのプロフィール画像">
@@ -223,11 +236,9 @@
         </div>
     </div>
 </div>
-checked
-
         <div class="form-item">
-            <button type="submit">送信</button>
-        </div>
+        <button type="submit">送信</button>
+    </div>
     </form>
 </body>
 </html>
@@ -240,13 +251,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         form.addEventListener('submit', (event) => {
             event.preventDefault();
-
-            const experience = document.getElementById('experience').value;
-            const purpose = document.getElementById('purpose').value;
-            const priority = document.getElementById('priority').value;
-            const part = document.getElementById('part').value;
-            const budget = document.getElementById('budget').value;
-            const region = document.getElementById('region').value;
 
             // advisorの値を取得するための修正
             let advisor;
@@ -276,4 +280,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
