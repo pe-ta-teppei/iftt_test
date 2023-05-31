@@ -34,22 +34,6 @@
             margin: 0 15px; /* paddingをmarginに変更 */
             animation: slideIn 1s ease;
         }
-
-        select,
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"] {
-            width: 100%;
-            padding: 10px;
-            font-size: 24px; /* フォントサイズを大きくして全体的に大きくする */
-            border-radius: 4px;
-            border: 1px solid #cccccc;
-            background-color: #ffffff;
-            animation: fadeIn 1s ease;
-            box-sizing: border-box; /* 追加する */
-        }
-
-
         
         label {
             display: block;
@@ -199,108 +183,7 @@
     <header>
         <h1>脱毛サロン診断</h1>
     </header>
-    <form id="survey-form">
-        <div class="form-item">
-           <label for="experience"><span style="font-size: 1.3em; color: #FF627F;">脱毛の経験</span>はございますか</label>
-            <select id="experience">
-                <option value="はじめて">はじめて</option>
-                <option value="やったことがある">やったことがある</option>
-            </select>
-        </div>
-
-        <div class="form-item">
-            <label for="purpose"><span style="font-size: 1.3em; color: #FF627F;">脱毛の目的</span>を教えてください</label>
-            <select id="purpose">
-                <option value="自己処理の手間を減らしたい">自己処理の手間を減らしたい</option>
-                <option value="肌をきれいにしたい">肌をきれいにしたい</option>
-                <option value="ムダ毛の悩みを解消したい">ムダ毛の悩みを解消したい</option>
-            </select>
-        </div>
-
-        <div class="form-item">
-            <label for="priority"><span style="font-size: 1.3em; color: #FF627F;">脱毛で重視</span>することは</label>
-            <select id="priority">
-                <option value="効果">効果</option>
-                <option value="価格">価格</option>
-                <option value="痛み">痛み</option>
-                <option value="アフターケア">アフターケア</option>
-            </select>
-        </div>
-
-        <div class="form-item">
-            <label for="part"><span style="font-size: 1.3em; color: #FF627F;">脱毛したい部位</span>を教えてください</label>
-            <select id="part">
-                <option value="全身脱毛">全身脱毛</option>
-                <option value="背中・うなじ">背中・うなじ</option>
-                <option value="VIO">VIO</option>
-                <option value="その他">その他</option>
-            </select>
-        </div>
-
-        <div class="form-item">
-            <label for="budget"><span style="font-size: 1.3em; color: #FF627F;">ご予算</span>を教えてください</label>
-                            <select id="budget">
-                <option value="〜10,000円">〜10,000円</option>
-                <option value="〜20,000円">〜20,000円</option>
-                <option value="〜30,000円">〜30,000円</option>
-                <option value="〜50,000円">〜50,000円</option>
-                <option value="プランによる">プランによる</option>
-            </select>
-        </div>
-
-        <div class="form-item">
-            <label for="region"><span style="font-size: 1.3em; color: #FF627F;">お住まいの地域</span>を教えてください</label>
-            <select id="region">
-                <option value="北海道">北海道</option>
-                <!-- 他の地域をここに追加 -->
-                <option value="青森県">青森県</option>
-                <option value="岩手県">岩手県</option>
-                <option value="宮城県">宮城県</option>
-                <option value="秋田県">秋田県</option>
-                <option value="山形県">山形県</option>
-                <option value="福島県">福島県</option>
-                <option value="茨城県">茨城県</option>
-                <option value="栃木県">栃木県</option>
-                <option value="群馬県">群馬県</option>
-                <option value="埼玉県">埼玉県</option>
-                <option value="千葉県">千葉県</option>
-                <option value="東京都">東京都</option>
-                <option value="神奈川県">神奈川県</option>
-                <option value="新潟県">新潟県</option>
-                <option value="富山県">富山県</option>
-                <option value="石川県">石川県</option>
-                <option value="福井県">福井県</option>
-                <option value="山梨県">山梨県</option>
-                <option value="長野県">長野県</option>
-                <option value="岐阜県">岐阜県</option>
-                <option value="静岡県">静岡県</option>
-                <option value="愛知県">愛知県</option>
-                <option value="三重県">三重県</option>
-                <option value="滋賀県">滋賀県</option>
-                <option value="京都府">京都府</option>
-                <option value="大阪府">大阪府</option>
-                <option value="兵庫県">兵庫県</option>
-                <option value="奈良県">奈良県</option>
-                <option value="和歌山県">和歌山県</option>
-                <option value="鳥取県">鳥取県</option>
-                <option value="島根県">島根県</option>
-                <option value="岡山県">岡山県</option>
-                <option value="広島県">広島県</option>
-                <option value="山口県">山口県</option>
-                <option value="徳島県">徳島県</option>
-                <option value="香川県">香川県</option>
-                <option value="愛媛県">愛媛県</option>
-                <option value="高知県">高知県</option>
-                <option value="福岡県">福岡県</option>
-                <option value="佐賀県">佐賀県</option>
-                <option value="長崎県">長崎県</option>
-                <option value="熊本県">熊本県</option>
-                <option value="大分県">大分県</option>
-                <option value="宮崎県">宮崎県</option>
-                <option value="鹿児島県">鹿児島県</option>
-                <option value="沖縄県">沖縄県</option>
-            </select>
-        </div>
+    
                   <div class="form-item">
     <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
     <div class="advisor-container">
@@ -340,7 +223,7 @@
         </div>
     </div>
 </div>
-
+checked
 
         <div class="form-item">
             <button type="submit">送信</button>
@@ -378,7 +261,7 @@ document.addEventListener("DOMContentLoaded", function() {
             liff.sendMessages([
                 {
                     type: "text",
-                    text: `下記の内容で脱毛診断\n\n脱毛の経験：${experience}\n目的：${purpose}\n重視すること：${priority}\n脱毛したい部位：${part}\nご予算：${budget}\nお住まいの地域：${region}\n美容アドバイザー：${advisor}\n\nで診断結果を教えてください。`
+                    text: `下記の内容でAIに質問\n\n美容アドバイザー：${advisor}\n\nで診断結果を教えてください。`
                 }
             ]).then(() => {
                 console.log("メッセージを送信しました");
