@@ -1,11 +1,9 @@
-<!DOCTYPE html>
 <html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>脱毛サロン診断</title>
-
     <style>
         /* 全体のスタイル */
         body {
@@ -83,60 +81,44 @@
         .advisor-container {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1em; /* 新規追加: アドバイザーグループ間のマージン */
         }
 
-        .advisor-item {
-            display: flex;
-            flex-direction: column; 
-            align-items: center; 
-            margin: 0 3px; 
-            padding: 1em;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-            flex: 1; /* 追加 */
-        }
-        
-        .advisor-item input[type="radio"]:checked ~ * {
-            background-color: #FFF0F5;
+                .advisor-item {
+            cursor: pointer;
         }
 
-        .advisor-item img {
-            width: 90%;
-            height: auto;
-            border-radius: 10%;
-            margin-bottom: 8px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .advisor-item span {
-            display: block;
-            font-size: 16px;
-            font-weight: bold;
-            margin-bottom: 3px;
-        }
-        
-        /* 新規追加: 職業、年齢、性格のスタイル */
-        .advisor-item span:nth-child(n+3) {
-            font-size: 10px;
-            font-weight: normal;
+        .advisor-item:hover {
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
         }
 
         .advisor-item input[type="radio"] {
             display: none;
         }
 
-        /* ラジオボタンが選択されたときのボックス色 */
-        .advisor-item input[type="radio"]:checked ~ * {
-            background-color: #FFF0F5;
+        .advisor-item input[type="radio"]:checked ~ img {
+            box-shadow: 0px 0px 15px rgba(255, 98, 127, 0.8);
         }
 
-        .advisor-item:hover {
+        .advisor-item label {
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 9px;
+            background-color: #cccccc; /* 初期状態のボタン色をグレーに */
+            color: #fff;
+            font-weight: bold;
+            font-size: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        /* ラジオボタンが選択されたときのボタン色 */
+        .advisor-item input[type="radio"]:checked + label {
+            background-color: #ff627f;
+        }
+
+        .advisor-item label:hover {
             background-color: #ff3b6b;
         }
-
         
         /* アニメーション */
         @keyframes slideIn {
@@ -180,103 +162,110 @@
             font-size: 14px;
             margin: 0;
         }
-    </style>
+     </style>
 </head>
-    
-    document.addEventListener("DOMContentLoaded", function() {
-            // ...
-            // 最初のアドバイザーを選択状態にする
-            const firstAdvisor = document.getElementById('advisor1');
-            firstAdvisor.checked = true;
-            // ...
-        });
 
 <body>
     <header>
         <h1>脱毛サロン診断</h1>
     </header>
-    
     <form id="survey-form">
-                  <div class="form-item">
+        <div class="form-item">
     <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
     <div class="advisor-container">
         <div class="advisor-item">
-            <input type="radio" id="advisor1" name="advisor" value="Emi" style="display: none;">
-            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c25f162e-e062-4663-963d-446ddb611158.png" alt="Emiのプロフィール画像">
+            <input type="radio" id="advisor1" name="advisor" value="Emi" checked>
+            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c6945299-a383-4ffd-9126-c9be9249c31f.jpg" alt="Emiのプロフィール画像">
             <span>Emi</span>
-            <span>インフルエンサー</span>
-            <span>28歳</span>
-            <span>性格：喜びと感謝</span>
         </div>
         <div class="advisor-item">
-            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/2b72fb5c-d0dd-4949-916f-be309ab52dc5.png" alt="Karenのプロフィール画像">
+            <input type="radio" id="advisor2" name="advisor" value="Karen">
+            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/aaf3aa83-3b44-47f5-9284-5aa07cab2921.jpg" alt="Karenのプロフィール画像">
             <span>Karen</span>
-            <span>アパレル店員</span>
-            <span>23歳</span>
-            <span>性格：美と創造</span>
-            <input type="radio" id="advisor2" name="advisor" value="Karen" style="display: none;">
-        </div>
-    </div>
-    <div class="advisor-container">
-        <div class="advisor-item">
-            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/f9bd28e4-9786-4b73-b345-4e49a6f0d6d1.png" alt="Amyのプロフィール画像">
-            <span>Amy</span>
-            <span>化粧品販売</span>
-            <span>24歳</span>
-            <span>性格：平和</span>
-            <input type="radio" id="advisor3" name="advisor" value="Amy" style="display: none;">
-        </div>
-        <div class="advisor-item">
-            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/99a192be-354e-4415-83a6-765446a2205f.png" alt="Sallyのプロフィール画像">
-            <span>Sally</span>
-            <span>キャラクター</span>
-            <span>年齢非公開</span>
-            <span>性格：知識の探究</span>
-            <input type="radio" id="advisor4" name="advisor" value="Sally" style="display: none;">
         </div>
     </div>
 </div>
+
         <div class="form-item">
-        <button type="submit">送信</button>
-    </div>
+            <button type="submit">送信</button>
+        </div>
     </form>
-</body>
-</html>
 
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
-document.addEventListener("DOMContentLoaded", function() {
-    liff.init({ liffId: "1661261485-325a5Pw2" }).then(() => {
-        const form = document.getElementById('survey-form');
+    document.addEventListener("DOMContentLoaded", function() {
+        liff.init({ liffId: "1661217730-EqRPMnDw" }).then(() => {
+            const form = document.getElementById('survey-form');
 
-        form.addEventListener('submit', (event) => {
-            event.preventDefault();
+ </style>
+</head>
 
-            // advisorの値を取得するための修正
-            let advisor;
-            const advisors = document.getElementsByName('advisor');
-            for (let i = 0; i < advisors.length; i++) {
-                if (advisors[i].checked) {
-                    advisor = advisors[i].value;
-                    break;
-                }
+<body>
+    <header>
+        <h1>脱毛サロン診断</h1>
+    </header>
+    <form id="survey-form">
+        <div class="form-item">
+    <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
+    <div class="advisor-container">
+        <div class="advisor-item">
+            <input type="radio" id="advisor1" name="advisor" value="Emi" checked>
+            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c6945299-a383-4ffd-9126-c9be9249c31f.jpg" alt="Emiのプロフィール画像">
+            <span>Emi</span>
+        </div>
+        <div class="advisor-item">
+            <input type="radio" id="advisor2" name="advisor" value="Karen">
+            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/aaf3aa83-3b44-47f5-9284-5aa07cab2921.jpg" alt="Karenのプロフィール画像">
+            <span>Karen</span>
+        </div>
+    </div>
+</div>
+
+        <div class="form-item">
+            <button type="submit">送信</button>
+        </div>
+    </form>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        liff.init({ liffId: "1661217730-EqRPMnDw" }).then(() => {
+            const form = document.getElementById('survey-form');
+                        i++) {
+                advisors[i].addEventListener('click', function() {
+                    this.querySelector('input[type="radio"]').checked = true;
+                });
             }
 
-            liff.sendMessages([
-                {
-                    type: "text",
-                    text: `下記の内容でAIに質問\n\n美容アドバイザー：${advisor}\n\nで診断結果を教えてください。`
-                }
-            ]).then(() => {
-                console.log("メッセージを送信しました");
-                setTimeout(() => { liff.closeWindow(); }, 10); // 送信後に0.01秒待ってからLIFFブラウザを閉じる
-            }).catch((error) => {
-                console.error("メッセージの送信に失敗しました", error);
-            });
-        });
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
 
-    }).catch((error) => {
-        console.error("LIFF SDK の初期化に失敗しました", error);
+                let advisor;
+                const advisors = document.getElementsByName('advisor');
+                for (let i = 0; i < advisors.length; i++) {
+                    if (advisors[i].checked) {
+                        advisor = advisors[i].value;
+                        break;
+                    }
+                }
+
+                liff.sendMessages([
+                    {
+                        type: "text",
+                        text: `下記の内容で脱毛診断\n\n美容アドバイザー：${advisor}\n\nで診断結果を教えてください。`
+                    }
+                ]).then(() => {
+                    console.log("メッセージを送信しました");
+                    setTimeout(() => { liff.closeWindow(); }, 10);
+                }).catch((error) => {
+                    console.error("メッセージの送信に失敗しました", error);
+                });
+            });
+        }).catch((error) => {
+            console.error("LIFF SDK の初期化に失敗しました", error);
+        });
     });
-});
 </script>
+
+</body>
+</html>
