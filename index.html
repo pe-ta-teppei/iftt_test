@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ja">
 
 <head>
@@ -169,6 +170,7 @@
     <header>
         <h1>脱毛サロン診断</h1>
     </header>
+    
     <form id="survey-form">
         <div class="form-item">
     <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
@@ -187,85 +189,55 @@
 </div>
 
         <div class="form-item">
-            <button type="submit">送信</button>
+            <label for="question">アドバイザーに聞きたいことを入力してください</label>
+            <input type="text" id="question" required>
         </div>
-    </form>
-
-<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        liff.init({ liffId: "1661217730-EqRPMnDw" }).then(() => {
-            const form = document.getElementById('survey-form');
-
- </style>
-</head>
-
-<body>
-    <header>
-        <h1>脱毛サロン診断</h1>
-    </header>
-    <form id="survey-form">
-        <div class="form-item">
-    <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
-    <div class="advisor-container">
-        <div class="advisor-item">
-            <input type="radio" id="advisor1" name="advisor" value="Emi" checked>
-            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c6945299-a383-4ffd-9126-c9be9249c31f.jpg" alt="Emiのプロフィール画像">
-            <span>Emi</span>
-        </div>
-        <div class="advisor-item">
-            <input type="radio" id="advisor2" name="advisor" value="Karen">
-            <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/aaf3aa83-3b44-47f5-9284-5aa07cab2921.jpg" alt="Karenのプロフィール画像">
-            <span>Karen</span>
-        </div>
-    </div>
-</div>
 
         <div class="form-item">
             <button type="submit">送信</button>
         </div>
     </form>
+</body>
 
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        liff.init({ liffId: "1661217730-EqRPMnDw" }).then(() => {
-            const form = document.getElementById('survey-form');
-                        i++) {
-                advisors[i].addEventListener('click', function() {
-                    this.querySelector('input[type="radio"]').checked = true;
-                });
+document.addEventListener("DOMContentLoaded", function() {
+    liff.init({ liffId: "1661261485-325a5Pw2" }).then(() => {
+        const form = document.getElementById('survey-form');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            // アドバイザーの選択値を取得
+            let advisor;
+            const advisors = document.getElementsByName('advisor');
+            for (let i = 0; i < advisors.length; i++) {
+                if (advisors[i].checked) {
+                    advisor = advisors[i].value;
+                    break;
+                }
             }
 
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
+            // 質問の入力値を取得
+            const question = document.getElementById('question').value;
 
-                let advisor;
-                const advisors = document.getElementsByName('advisor');
-                for (let i = 0; i < advisors.length; i++) {
-                    if (advisors[i].checked) {
-                        advisor = advisors[i].value;
-                        break;
-                    }
+            liff.sendMessages([
+                {
+                    type: "text",
+                    text: `下記の内容でAIに質問\n\n美容アドバイザー：${advisor}\n質問：${question}\n\nで診断結果を教えてください。`
                 }
-
-                liff.sendMessages([
-                    {
-                        type: "text",
-                        text: `下記の内容で脱毛診断\n\n美容アドバイザー：${advisor}\n\nで診断結果を教えてください。`
-                    }
-                ]).then(() => {
-                    console.log("メッセージを送信しました");
-                    setTimeout(() => { liff.closeWindow(); }, 10);
-                }).catch((error) => {
-                    console.error("メッセージの送信に失敗しました", error);
-                });
+            ]).then(() => {
+                console.log("メッセージを送信しました");
+                setTimeout(() => { liff.closeWindow(); }, 10);
+            }).catch((error) => {
+                console.error("メッセージの送信に失敗しました", error);
             });
-        }).catch((error) => {
-            console.error("LIFF SDK の初期化に失敗しました", error);
         });
+
+    }).catch((error) => {
+        console.error("LIFF SDK の初期化に失敗しました", error);
     });
+});
 </script>
 
-</body>
 </html>
