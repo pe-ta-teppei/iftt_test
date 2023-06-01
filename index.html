@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>脱毛サロン診断</title>
+
+    
     <style>
         /* 全体のスタイル */
         body {
@@ -33,6 +35,22 @@
             margin: 0 15px; /* paddingをmarginに変更 */
             animation: slideIn 1s ease;
         }
+
+        select,
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 24px; /* フォントサイズを大きくして全体的に大きくする */
+            border-radius: 4px;
+            border: 1px solid #cccccc;
+            background-color: #ffffff;
+            animation: fadeIn 1s ease;
+            box-sizing: border-box; /* 追加する */
+        }
+
+
         
         label {
             display: block;
@@ -84,20 +102,36 @@
             justify-content: space-between;
         }
 
-                .advisor-item {
-            cursor: pointer;
+        .advisor-item {
+            display: flex;
+            flex-direction: column; 
+            align-items: center; 
+            margin: 0 3px; 
+            padding: 1em;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            flex: 1; /* 追加 */
         }
 
-        .advisor-item:hover {
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        .advisor-item img {
+            width: 90%;
+            height: auto;
+            border-radius: 10%;
+            margin-bottom: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .advisor-item span {
+            display: block;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 3px;
         }
 
         .advisor-item input[type="radio"] {
             display: none;
-        }
-
-        .advisor-item input[type="radio"]:checked ~ img {
-            box-shadow: 0px 0px 15px rgba(255, 98, 127, 0.8);
         }
 
         .advisor-item label {
