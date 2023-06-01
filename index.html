@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>脱毛サロン診断</title>
-
-    
     <style>
         /* 全体のスタイル */
         body {
@@ -197,38 +195,69 @@
             font-size: 14px;
             margin: 0;
         }
+        
+        /* テキストエリア */
+        textarea {
+        height: 4em;
+        background: url(data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'><text x='5' y='20' style='font-size:16px'>〇〇県の近くのお店、痛くない脱毛、医療脱毛で探している など</text></svg>) no-repeat;
+    }
+
+    textarea:focus {
+        background: none;  /* フォーカスしたときにプレースホルダーテキストを消す */
+    }
+        
      </style>
 </head>
 
-         <div class="form-item">
-            <label for="advisor"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>をお選びください</label>
+<body>
+    <header>
+        <h1>脱毛サロン診断</h1>
+    </header>
+
+    <form id="survey-form">
+        <div class="form-item">
+            <label for="advisor">美容アドバイザーをお選びください</label>
             <div class="advisor-container">
                 <div class="advisor-item">
-                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c6945299-a383-4ffd-9126-c9be9249c31f.jpg" alt="Emiのプロフィール画像">
+                    <input type="radio" id="advisor1" name="advisor" value="Emi" style="display: none;">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/c25f162e-e062-4663-963d-446ddb611158.png" alt="Emiのプロフィール画像">
                     <span>Emi</span>
-                    <input type="radio" id="advisor1" name="advisor" value="Emi" checked>
-                    <label for="advisor1">選ぶ</label>
+                    <span>28歳</span>
+                    <span>敬意を持って美容をサポートします</span>
                 </div>
                 <div class="advisor-item">
-                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/aaf3aa83-3b44-47f5-9284-5aa07cab2921.jpg" alt="Karenのプロフィール画像">
+                    <input type="radio" id="advisor2" name="advisor" value="Karen" style="display: none;">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/2b72fb5c-d0dd-4949-916f-be309ab52dc5.png" alt="Karenのプロフィール画像">
                     <span>Karen</span>
-                    <input type="radio" id="advisor2" name="advisor" value="Karen">
-                    <label for="advisor2">選ぶ</label>
+                    <span>30歳</span>
+                    <span>これまで探求した美容方法を伝えます</span>
+                </div>
+            </div>
+            <div class="advisor-container">
+                <div class="advisor-item">
+                    <input type="radio" id="advisor3" name="advisor" value="Amy" style="display: none;">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/f9bd28e4-9786-4b73-b345-4e49a6f0d6d1.png" alt="Amyのプロフィール画像">
+                    <span>Amy</span>
+                    <span>24歳</span>
+                    <span>あなたの悩みに寄り添います</span>
+                </div>
+                <div class="advisor-item">
+                    <input type="radio" id="advisor4" name="advisor" value="Sally" style="display: none;">
+                    <img src="https://storage.googleapis.com/jupiter-static-prd/images/6522/8298/99a192be-354e-4415-83a6-765446a2205f.png" alt="Sallyのプロフィール画像">
+                    <span>Sally</span>
+                    <span>年齢非公開</span>
+                    <span>悩みについて代わりに調べてお伝えします</span>
                 </div>
             </div>
         </div>
-
-        <div class="form-item">
+         <div class="form-item">
             <label for="question">アドバイザーに聞きたいことを入力してください</label>
-            <input type="text" id="question" required>
+            <textarea id="question" name="question"></textarea>
         </div>
-
-        <div class="form-item">
-            <button type="submit">送信</button>
-        </div>
+                <div class="form-item">
+                   <button type="submit">送信</button>
     </form>
 </body>
-
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -238,7 +267,6 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            // アドバイザーの選択値を取得
             let advisor;
             const advisors = document.getElementsByName('advisor');
             for (let i = 0; i < advisors.length; i++) {
@@ -248,7 +276,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
             }
 
-            // 質問の入力値を取得
             const question = document.getElementById('question').value;
 
             liff.sendMessages([
@@ -269,5 +296,4 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-
 </html>
