@@ -198,9 +198,9 @@
         
         /* テキストエリア */
         textarea {
-        height: 7em;
-        width: 1em;
-        }
+        height: 5em; /* 5行分の高さ */
+        width: 100%; /* スマートフォンの全幅を使用 */
+    }
         
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
           color: gray;
@@ -266,7 +266,6 @@
         </div>
          <div class="form-item">
             <label for="question">アドバイザーに聞きたいことを入力してください</label>
-            <textarea id="question" name="question"></textarea>
             <textarea placeholder="〇〇県の近くのお店、痛くない脱毛、医療脱毛で探している など"></textarea>
         </div>
                 <div class="form-item">
