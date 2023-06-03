@@ -257,7 +257,7 @@
         </div>
          <div class="form-item">
             <label for="question"><span style="font-size: 1.3em; color: #FF627F;">美容アドバイザー</span>にご要望や相談したいことを入力してください</label>
-            <textarea placeholder="〇〇県の近くのお店、痛くない脱毛、医療脱毛で探している など、なんでも聞いてください"></textarea>
+            <textarea id="question" placeholder="〇〇県の近くのお店、痛くない脱毛、医療脱毛で探している など、なんでも聞いてください"></textarea>
         </div>
                 <div class="form-item">
                    <button type="submit">送信</button>
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            let advisor;
+            let advisor = "未選択";
             const advisors = document.getElementsByName('advisor');
             for (let i = 0; i < advisors.length; i++) {
                 if (advisors[i].checked) {
@@ -280,7 +280,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
                 }
             }
-
             const question = document.getElementById('question').value;
 
             liff.sendMessages([
