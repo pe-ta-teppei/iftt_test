@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function() {
         form.addEventListener('submit', (event) => {
             event.preventDefault();
 
-            let advisor = "未選択";
+            let advisor = "未選択"; // デフォルト値の設定
             const advisors = document.getElementsByName('advisor');
             for (let i = 0; i < advisors.length; i++) {
                 if (advisors[i].checked) {
@@ -280,13 +280,16 @@ document.addEventListener("DOMContentLoaded", function() {
                     break;
                 }
             }
-            const question = document.getElementById('question').value;
+
+            const question = document.getElementById('question').value; // HTML内のテキストエリアにidを追加
 
             liff.sendMessages([
                 {
                     type: "text",
                     text: `下記の内容でAIに質問\n\n美容アドバイザー：${advisor}\n質問：${question}\n\nで診断結果を教えてください。`
                 }
+            ])
+
             ]).then(() => {
                 console.log("メッセージを送信しました");
                 setTimeout(() => { liff.closeWindow(); }, 10);
