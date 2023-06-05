@@ -286,7 +286,7 @@ document.addEventListener("DOMContentLoaded", function() {
             liff.sendMessages([
                 {
                     type: "text",
-                    text: `下記の内容でAIに質問\n\n美容アドバイザー：${advisor}\n質問：${question}\n\nで診断結果を教えてください。`
+                    text: `下記の内容でAIに質問\n\n美容アドバイザー：${advisor}\n質問：${question}`
                 }
             ]).then(() => {
                 console.log("メッセージを送信しました");
